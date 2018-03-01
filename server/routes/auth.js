@@ -13,8 +13,10 @@ let loginPromise = (req, user) => {
 
 /* SIGNUP */
 router.post('/signup', (req, res, next) => {
-  const {username,password} = req.body;
-  if (!username || !password) return res.status(400).json({ message: 'Provide username and password' })
+  console.log('entro')
+  console.log(req.body)
+  const {username, password, email} = req.body;
+  if (!username || !password || !email) return res.status(400).json({ message: 'Provide username,password and email' })
   User.findOne({ username }, '_id')
     .then(foundUser =>{
       if (foundUser) return res.status(400).json({ message: 'The username already exists' });
@@ -22,7 +24,8 @@ router.post('/signup', (req, res, next) => {
       const hashPass = bcrypt.hashSync(password, salt);
       const theUser = new User({
         username,
-        password: hashPass
+        password: hashPass,
+        email
       });
       return theUser.save()
           .then(user => loginPromise(req,user))
@@ -36,7 +39,6 @@ router.post('/signup', (req, res, next) => {
       res.status(500).json(e)
     }) 
 });
-
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {

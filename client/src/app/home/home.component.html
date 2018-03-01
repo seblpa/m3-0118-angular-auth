@@ -1,0 +1,25 @@
+<p>
+  home works!
+</p>
+
+
+      <div *ngIf="!session.user" class="message">
+        <h1> You have to signup </h1>
+      </div>
+  
+      <div *ngIf="session.user" class="message">
+          <h1>Welcome </h1>
+            <p>{{ session.user.username }}</p>.
+         
+      </div>
+  
+      
+  
+    <div class="right">
+      <div class="btns">
+        <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard</a>
+       
+        <a *ngIf="!session.user" [routerLink]="['signup']">Signup</a>
+      
+      </div>
+    </div>

@@ -1,0 +1,21 @@
+<h1>
+  Dashboard
+</h1>
+
+<!-- {{customers | json }} -->
+<h1>Your Customers</h1>
+<div *ngFor="let c of customers">
+  <div>
+    <p>{{c.name}}</p>
+  </div>
+  <div>
+    <p>{{c.email}}</p>
+  </div>
+  <!-- <div>
+    <p>{{t.location}}</p>
+  </div>
+  <div>
+    <p>{{t._product}}</p>
+  </div> -->
+
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <div>CRM Mobile</div>
+  <div *ngIf="!session.getUser()">
+    <a [routerLink]="['login']">Login</a> | <a [routerLink]="['signup']">Signup</a>
+  </div>
+  <div *ngIf="session.getUser()">
+      <span>Hello {{session.getUser().username}}!</span> | <button (click)="logout()">Logout</button>
+  </div>
+</div>
