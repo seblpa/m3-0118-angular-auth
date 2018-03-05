@@ -4,12 +4,14 @@ import { CustomerService } from "../../services/customer.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: "app-customers-info",
-  templateUrl: "./customers-info.component.html",
-  styleUrls: ["./customers-info.component.css"]
+  selector: "app-customer-edit",
+  templateUrl: "./customer-edit.component.html",
+  styleUrls: ["./customer-edit.component.css"]
 })
-export class CustomersInfoComponent implements OnInit {
+export class CustomerEditComponent implements OnInit {
   customer: any;
+  name;
+  email;
 
   constructor(
     public customerService: CustomerService,
@@ -20,8 +22,6 @@ export class CustomersInfoComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log("my params");
-      console.log(params.id);
       this.getCustomer(params.id);
     });
   }
@@ -30,11 +30,16 @@ export class CustomersInfoComponent implements OnInit {
     this.customerService
       .getCustomerById(id)
       .subscribe(item => (this.customer = item));
+    console.log(this.customer);
   }
 
-  delete() {
-    this.customerService.delete(this.customer._id).subscribe(m => {
-      this.router.navigate(["/customers"]);
-    });
+  editCustomer(id) {
+    const name = this.name;
+    const email = this.email;
+    console.log(this.name, this.email);
+    this.customerService
+      .editCustomer(id, name, email)
+      .subscribe(item => (this.customer = item));
+    console.log(this.customer);
   }
 }

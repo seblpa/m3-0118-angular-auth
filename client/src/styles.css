@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+  height: 200px;
+  background-color: #203A45;
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
+  padding: 0; 
+  
+}
+
+.navbar-brand > a:hover {
+  
+  color: #41D492;
+  border-color: #41D492;
+}
+
+.signup {
+  margin-top: 30px;
+  padding: 15px;
+  
+  width: 50%;
+  height: 350px;
+}
+
+.nav-left {
+  float:left;
+  width: 300px;
+  height: 700px;
+margin: 25px 15px;
+}

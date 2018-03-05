@@ -11,7 +11,7 @@ const customerSchema = new Schema({
     type: String,
     require: true
   },
-  location: { type: { type: String }, coordinates: [Number] },
+  //location: { type: { type: String }, coordinates: [Number] },
   _product: [
       {
         type: Schema.Types.ObjectId,

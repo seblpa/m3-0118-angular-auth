@@ -1,3 +1,40 @@
-<p>
-  customers-info works!
-</p>
+<div class="container nav-left">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active">
+      <a href="#">Dashboard</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Customers</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Leads</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Products</a>
+    </li>
+  </ul>
+</div>
+
+<button routerLink='/customers' class="btn btn-success btn-goTo-dashboard">Back to list</button>
+
+<a [routerLink]="['/customers/edit', customer._id]"> Edit Details </a>
+
+
+
+<button (click)="delete()" class="btn btn-success btn-goTo-dashboard">Delete</button>
+
+
+<div class="info">
+<h1> Customer details </h1>
+
+<!-- <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard - Volver a lista</a> -->
+
+
+<div *ngIf=customer>
+  <h2> {{ customer?.name }}</h2>
+  <h3> {{ customer?.email }} </h3>
+
+ 
+</div>
+
+</div>

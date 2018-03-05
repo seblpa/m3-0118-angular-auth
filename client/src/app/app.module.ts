@@ -14,6 +14,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CustomersInfoComponent } from './customers-info/customers-info.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerCreateComponent } from './customer-create/customer-create.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -24,7 +27,11 @@ import { CustomersInfoComponent } from './customers-info/customers-info.componen
     SignupComponent,
     LoginComponent,
     HomeComponent,
-    CustomersInfoComponent
+    CustomersInfoComponent,
+    CustomerEditComponent,
+    CustomerCreateComponent,
+    FilterPipe,
+    
   ],
   imports: [
     BrowserModule,

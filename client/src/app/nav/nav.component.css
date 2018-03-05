@@ -1,0 +1,14 @@
+
+.navbar-brand > a:hover {
+  
+  color: #41D492;
+  border-color: #41D492;
+}
+
+
+a:hover {
+  
+  color: #41D492;
+  border-color: #41D492;
+}
+

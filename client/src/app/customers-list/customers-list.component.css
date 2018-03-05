@@ -1,0 +1,25 @@
+body {
+  background-color: #EFEFEF;
+}
+
+.nav-left {
+  float:left;
+  width: 300px;
+  height: 700px;
+  margin: 25px 15px;
+}
+
+.table {
+  float: left;
+  width: 850px;
+}
+
+.btn-new-customer {
+  float: left;
+  margin: 25px;
+}
+
+.buscador {
+  float: left;
+  margin: 25px;
+}

@@ -7,7 +7,7 @@ import { SessionService } from '../../services/session.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-;
+
 user: object
 
   constructor(private session:SessionService) { }

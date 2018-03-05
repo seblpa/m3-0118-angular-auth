@@ -5,6 +5,7 @@ const router = express.Router()
 
 router.get('/show', (req, res, next) => {
   User.find()
+
     .then((foundUsers) => res.status(200).json(foundUsers))
     .catch((e) => res.status(500).json(e))
 });

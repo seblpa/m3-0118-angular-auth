@@ -1,21 +1,84 @@
-<h1>
-  Dashboard
-</h1>
+<div class="container nav-left">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active">
+      <a href="#">Dashboard</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Customers</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Leads</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Products</a>
+    </li>
+  </ul>
+</div>
+
+<button routerLink='/customer/create' class="btn btn-success btn-new-customer">Create New Customer</button>
 
 <!-- {{customers | json }} -->
-<h1>Your Customers</h1>
-<div *ngFor="let c of customers">
-  <div>
-    <p>{{c.name}}</p>
-  </div>
-  <div>
-    <p>{{c.email}}</p>
-  </div>
-  <!-- <div>
-    <p>{{t.location}}</p>
-  </div>
-  <div>
-    <p>{{t._product}}</p>
-  </div> -->
 
+<!-- <div *ngFor="let customer of customers">
+  <div>
+    <p>{{customer.name}}</p>
+    
+  </div>
+  <div>
+    <p>{{customer.email}}</p>
+  </div> 
+  <div>
+    <p>{{customer.location | json}}</p>
+  </div>
+  <div>
+    <p>{{customer._product | json }}</p>
+    <p> {{ customer._product[0].name }}</p>
+  </div> 
+  <a [routerLink]="['/customers/', customer._id]"> + info</a>
+</div> -->
+
+
+<div class="buscador">
+    <label for="customer_name">Name Filter: </label>
+    <input id="" placeholder="customer name" type="text" [(ngModel)]="pattern">
+  </div>
+
+<div class="container table">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-default widget">
+        <table id="table-normal" class="table  table-bordered table-hover" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Product</th>
+              <th>Start date</th>
+            </tr>
+          </thead>
+
+          <tfoot>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Product</th>
+              <th>Start Date</th>
+            </tr>
+          </tfoot>
+
+          <tbody *ngFor="let customer of customers | filter:'name':pattern; let i = index">
+            <tr>
+              <td>{{customer.name}}</td>
+              <td>{{customer.email}}</td>
+              <td>{{ customer._product[0].name }}</td>
+              <td><a [routerLink]="['/customers/', customer._id]"> + info</a></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-12 -->
 </div>

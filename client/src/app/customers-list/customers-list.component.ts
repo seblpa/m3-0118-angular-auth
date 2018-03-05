@@ -11,14 +11,14 @@ export class CustomersListComponent implements OnInit {
 customers: any = [];
 
   constructor(public customerService: CustomerService,public session: SessionService) {
+  }
+  
+  ngOnInit() {
     this.customerService.getCustomer().subscribe(res => {
-      console.log(res)
       this.customers = res;
+      console.log('hola===============')
       console.log(this.customers)
     });
-   }
-
-  ngOnInit() {
   }
 
 }

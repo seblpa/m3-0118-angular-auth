@@ -1,0 +1,45 @@
+<div class="container nav-left">
+  <ul class="nav nav-pills nav-stacked">
+    <li role="presentation" class="active">
+      <a href="#">Dashboard</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Customers</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Leads</a>
+    </li>
+    <li role="presentation">
+      <a href="#">Products</a>
+    </li>
+  </ul>
+</div>
+
+<button routerLink='/customers' class="btn btn-success btn-goTo-dashboard">Back to list</button>
+
+<!-- (ngSubmit)="newCustomer(newCustomerForm)" -->
+
+<div *ngIf="session.getUser()" class="create-form">
+  <form #newCustomerForm="ngForm">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="name" #Name="ngModel" [(ngModel)]="name" />
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" #Email="ngModel" [(ngModel)]="email" />
+    </div>
+
+    <!-- <div>
+            <label for="location">Location</label>
+            <input type="text" name="location" #Location="ngModel" [(ngModel)]="location"/> 
+          </div> -->
+
+
+          <div>
+              <button (click)='createCustomer(name, email)' class="btn btn-success btn-create-customer"> Create Customer </button>
+            </div>
+
+  </form>
+</div>
