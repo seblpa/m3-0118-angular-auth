@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
+  
   constructor(public session: SessionService, public router:Router) { }
   error;
   ngOnInit() {

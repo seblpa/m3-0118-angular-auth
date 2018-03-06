@@ -6,6 +6,8 @@ import { CustomersListComponent } from "./customers-list/customers-list.componen
 import { CustomersInfoComponent } from "./customers-info/customers-info.component";
 import { CustomerEditComponent } from "./customer-edit/customer-edit.component";
 import { CustomerCreateComponent } from "./customer-create/customer-create.component";
+import { CalendarComponent } from "./calendar/calendar.component";
+
 
 export const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -15,5 +17,6 @@ export const routes: Routes = [
   { path: "customers/:id", component: CustomersInfoComponent },
   { path: "customers/edit/:id", component: CustomerEditComponent },
   { path: "customer/create", component: CustomerCreateComponent },
-  { path: "**", redirectTo: "" }
+  { path: "**", redirectTo: "" },
+  { path: "calendar", component: CalendarComponent}
 ];

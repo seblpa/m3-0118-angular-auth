@@ -5,14 +5,10 @@ body {
 .nav-left {
   float:left;
   width: 300px;
-  height: 700px;
+  height: auto;
   margin: 25px 15px;
 }
 
-.table {
-  float: left;
-  width: 850px;
-}
 
 .btn-new-customer {
   float: left;
@@ -23,3 +19,4 @@ body {
   float: left;
   margin: 25px;
 }
+

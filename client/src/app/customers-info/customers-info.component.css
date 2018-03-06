@@ -8,3 +8,10 @@
   float: left;
   width: 850px;
 }
+
+
+.btn-delete {
+  float: left;
+  margin: 25px;
+}
+

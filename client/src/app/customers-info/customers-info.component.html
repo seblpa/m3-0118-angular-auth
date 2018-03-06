@@ -15,26 +15,88 @@
   </ul>
 </div>
 
-<button routerLink='/customers' class="btn btn-success btn-goTo-dashboard">Back to list</button>
+<button routerLink='/customers' class="btn btn-goTo-dashboard">Back to list</button>
 
-<a [routerLink]="['/customers/edit', customer._id]"> Edit Details </a>
+<button [routerLink]="['/customers/edit', customer._id]" class="btn btn-goTo-dashboard"> Edit Details </button>
 
 
 
-<button (click)="delete()" class="btn btn-success btn-goTo-dashboard">Delete</button>
+<button (click)="delete()" class="btn btn-delete">Delete</button>
 
 
 <div class="info">
-<h1> Customer details </h1>
+  <h1> {{customer?.name}} </h1>
 
-<!-- <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard - Volver a lista</a> -->
+  <!-- <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard - Volver a lista</a> -->
+
+<!-- 
+  <div *ngIf=customer>
+    <h2> {{ customer?.name }}</h2>
+    <h3> {{ customer?.email }} </h3>
+  </div>
+
+</div> -->
 
 
-<div *ngIf=customer>
-  <h2> {{ customer?.name }}</h2>
-  <h3> {{ customer?.email }} </h3>
+<div class="container table">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card card-default widget">
+        <table id="table-normal" class="table  table-bordered table-hover" cellspacing="0" width="100%">
 
- 
-</div>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Data</th>
+            </tr>
+          </thead>
 
+
+          <tbody *ngIf=customer>
+            <tr>
+              <!-- {{customers | json }} -->
+              <th scope="row">name</th>
+              <td>{{customer?.name}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Product</th>
+              <td>{{customer?._product[0].name}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Email</th>
+              <td>{{customer?.email}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Phone</th>
+              <td>{{customer?.phone}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Address</th>
+              <td>{{customer?.address}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">Zip Code</th>
+              <td>{{customer?.zipCode}}</td>
+            </tr>
+
+            <tr>
+              <th scope="row">City</th>
+              <td>{{customer?.city}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <agm-map [latitude]="40.489353" [longitude]="-3.6827461">
+            <agm-marker [latitude]="customer.location.lat" [longitude]="customer.location.lng"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-md-12 -->
 </div>
