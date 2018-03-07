@@ -4,6 +4,7 @@ const User = require("../models/User");
 // const Mensaje = require("../models/Mensaje");
 const moment = require("moment");
 const nodemailer = require('nodemailer');
+require('dotenv');
 
 router.get("/entrada", (req, res, next) => {
 	const emisor = res.locals.user._id;
@@ -82,25 +83,26 @@ router.get("/delete/:id", (req, res) => {
     .catch(err => { next(err) });
 });
 
-module.exports = router;
+router.post("/message", (req, res) => {
+ const mailAddress = req.body.mailoptions;
+ const mailSubject = req.body.mailsubject;
+ const mailText = req.body.mailtext;
+ const mailHtml = req.body.mailhtml;
 
-
-
-console.log('entro en mensajes')
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
       user: 'sebastien.delmestre@gmail.com',
-      pass: 'Lalita11'
+      pass: process.env.EMAIL,
     }
   });
 
   let mailOptions = {
     from: '"Fred Foo 👻" <sebastien.delmestre@gmail.com>',
-    to: 'manuelavellosolis@gmail.com',
-    subject: 'PRUEBA',
-    text: 'Hello world?', // plain text body
-    html: '<b>Hello world?</b>' // html body
+    to: mailAddress,
+    subject: mailSubject,
+    text: mailText, // plain text body
+    html: mailHtml // html body
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -109,3 +111,10 @@ const transporter = nodemailer.createTransport({
     }
     console.log(info);
 });
+
+})
+
+module.exports = router;
+
+
+

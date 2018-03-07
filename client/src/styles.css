@@ -6,21 +6,26 @@ body {
   background-color:  #EFEFEF;
 }
 
+nav {
+  position: fixed;
+  color: #41D492;
+}
+
 .navbar {
+  
   height: 200px;
   background-color: #203A45;
   border-radius: 0;
   border: 0;
   margin-bottom: 0;
   padding: 0; 
-  
+
 }
 
 .btn  {
   background-color: #203A45;
   color: #EFEFEF;
 }
-
 
 .table {
   float: left;
@@ -34,12 +39,6 @@ th {
 
 h1 {
   color: #203A45;
-}
-
-.navbar-brand > a:hover {
-  
-  color: #41D492;
-  border-color: #41D492;
 }
 
 .signup {
@@ -61,7 +60,6 @@ agm-map {
   clear: both;
   height: 400px;
   width: 850px;
-
-margin-bottom: 20px;
-margin-left: 345px;
+  margin-bottom: 20px;
+  margin-left: 345px;
 }

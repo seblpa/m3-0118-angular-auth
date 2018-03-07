@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container nav-left">
   <ul class="nav nav-pills nav-stacked">
     <li role="presentation" class="active">
@@ -14,7 +14,7 @@
       <a href="#">Products</a>
     </li>
   </ul>
-</div>
+</div> -->
 
 <button routerLink='/customer/create' class="btn btn-new-customer">Create New Customer</button>
 
@@ -82,3 +82,36 @@
   <!-- /.col-md-12 -->
 </div>
 
+
+<div class="container">
+  <div class="row">
+      <div class="parent">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Picture</th>
+                      <th scope="col">Username</th>
+                     
+                  </tr>
+              </thead>
+              <tbody *ngFor="let customer of customers; let i = index">
+                  <tr>
+                      <th scope="row">{{i+1}}</th>
+                      <td>
+                          <!-- *ngIf="user.gender=='M'" -->
+                          <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtjC1ue_JBgcpqkfusdsWaehhnHrjx5nZMG76rEZj4hoAm_gMD"
+                              alt="Card image cap" height="50px" width="50px">
+                              <!-- *ngIf="user.gender=='F'" -->
+                              <img  src="http://semantic-ui.com/images/avatar2/large/kristy.png" alt="Card image cap" height="50px" width="50px">
+                      </td>
+                      <td>{{customer.name }} </td>
+                      <td>{{customer._product[0].name}}</td>
+                      <td>{{customer.city}}</td>
+                     
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div> 

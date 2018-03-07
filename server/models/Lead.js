@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const customerSchema = new Schema({
+const leadSchema = new Schema({
   name: {
     type: String,
     require: true
   },
   gender: {
     type: String,
-    require: true,
+    require: true
+  },
+  description: {
+    type: String,
+    require: true
   },
   email: {
     type: String,
@@ -31,12 +35,7 @@ const customerSchema = new Schema({
     lng: Number
   },
   //location: { type: { type: String }, coordinates: [Number] },
-  _product: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Product'
-      }
-  ]
+  
 },{
   timestamps: {
     createdAt: 'created_at',
@@ -47,4 +46,4 @@ const customerSchema = new Schema({
 
 // customerSchema.index({ location: '2dsphere' })
 
-module.exports = mongoose.model('Customer', customerSchema);
+module.exports = mongoose.model('Lead', leadSchema);

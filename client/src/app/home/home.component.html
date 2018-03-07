@@ -12,14 +12,14 @@
       </li>
       <li role="presentation">
         <a href="#">Products</a>
-        
       </li>
+
+      <mat-form-field class="example-full-width">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="myDate"  name="myDate" (dateInput)="submitDate(myDate)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi="true" #picker></mat-datepicker>
+      </mat-form-field>
     </ul>
-    <mat-form-field class="example-full-width">
-        <input matInput [matDatepicker]="picker" [(ngModel)]="myDate" name="myDate" (dateInput)="submitDate(myDate)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi="true" #picker></mat-datepicker>
-    </mat-form-field>
   </div>
 
   

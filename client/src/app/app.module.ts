@@ -25,6 +25,7 @@ import { MatCheckboxModule} from '@angular/material';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatFormFieldModule, MatMenuModule, MatToolbarModule, MatIconModule, MatCardModule, MatSidenavModule, MatInputModule, MatTooltipModule, MatNativeDateModule } from '@angular/material';
+import { MessageComponent } from './message/message.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MatFormFieldModule, MatMenuModule, MatToolbarModule, MatIconModule, Mat
     CustomerEditComponent,
     CustomerCreateComponent,
     FilterPipe,
-    CalendarComponent
+    CalendarComponent,
+    MessageComponent
     
   ],
   imports: [

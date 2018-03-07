@@ -7,6 +7,7 @@ import { CustomersInfoComponent } from "./customers-info/customers-info.componen
 import { CustomerEditComponent } from "./customer-edit/customer-edit.component";
 import { CustomerCreateComponent } from "./customer-create/customer-create.component";
 import { CalendarComponent } from "./calendar/calendar.component";
+import { MessageComponent} from "./message/message.component"
 
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: "customers/:id", component: CustomersInfoComponent },
   { path: "customers/edit/:id", component: CustomerEditComponent },
   { path: "customer/create", component: CustomerCreateComponent },
+  { path: "message", component: MessageComponent},
+  { path: "calendar", component: CalendarComponent},
   { path: "**", redirectTo: "" },
-  { path: "calendar", component: CalendarComponent}
 ];

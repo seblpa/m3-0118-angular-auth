@@ -47,4 +47,13 @@ export class CustomerService {
       .get(`${this.BASE_URL}/customer/delete/${id}`)
       .map(res => res.json());
   }
+
+
+
+sendEmail(mailoptions, mailsubject, mailtext, mailhtml){
+  console.log('entro en el servicio message')
+  console.log(mailoptions)
+  return this.http.post(`${this.BASE_URL}/messages/message`, {mailoptions, mailsubject, mailtext, mailhtml}, this.options)
+    .map(res => res.json());
+}
 }

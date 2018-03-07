@@ -1,0 +1,40 @@
+<p>
+  message works!
+</p>
+
+<!-- <div class="container signup">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+    <div *ngIf="!session.getUser()"> -->
+    <form>
+        <div class="form-group">
+            <!-- <label for="exampleInputUsername1">Username</label> -->
+            <textarea  [(ngModel)]='usermail' placeholder="Username" name='usermail'>Enter email</textarea>
+                <!-- type="text" [(ngModel)]="username" name="username" class="form-control" id="exampleInputUsername1"   -->
+          </div>
+
+          <div class="form-group">
+              <textarea  [(ngModel)]='subject' placeholder="subject" name='subject'>Enter Subject</textarea>
+            </div>
+
+            <!-- <div class="form-group">
+                <textarea  [(ngModel)]='text' placeholder="text" name='text'>Enter Text</textarea>
+              </div> -->
+
+
+  <label for="text">text</label>
+  <input type="text" [(ngModel)]='text'  name="text" placeholder="Your name">
+
+              <div class="form-group">
+                  <textarea  [(ngModel)]='html' name='html'>{{texto}}</textarea>
+                </div>
+  
+
+      </form>
+      <button (click)="sendEmail()" class="btn btn-default">Submit</button>
+      <p *ngIf="error" class="error"> {{ error }} </p>
+    <!-- </div>
+    </div>
+  </div>
+  </div> -->
+

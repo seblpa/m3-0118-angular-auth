@@ -25,23 +25,26 @@
       </ul>
       <ul *ngIf="session.getUser()" class="nav navbar-nav navbar-right">
         <li><a href="#" class="navbar-brand">Hello {{session.getUser().username}}!</a></li>
-        <li><a routerLink='/customers' class="navbar-brand">Go to Dashboard</a></li>
+        <li><a routerLink='/customers' class="navbar-brand">Customers</a></li>
+        <li><a routerLink='/customers' class="navbar-brand">Leads</a></li>
+        <li><a routerLink='/customers' class="navbar-brand">Products</a></li>
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 
+<!-- 
+<a *ngIf="session.user" routerLink='/customers'>Go to DashBoard</a>
 
-<!-- <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard</a>
-
-<button routerLink='/customer/create' class="btn btn-success">Create New Customer</button>  -->
-
-
+<button routerLink='/customer/create' class="btn btn-success">Create New Customer</button> 
 
 
 
-<!-- <div>
+
+
+ <div>
   <div>CRM Mobile</div>
   <div *ngIf="!session.getUser()">
     <a [routerLink]="['login']">Login</a> | <a [routerLink]="['signup']">Signup</a>
@@ -53,4 +56,4 @@
 
 <a *ngIf="session.user" routerLink='/customers'>Go to DashBoard</a>
 
-<button routerLink='/customer/create' class="btn btn-success">Create New Customer</button>  -->
+<button routerLink='/customer/create' class="btn btn-success">Create New Customer</button>   -->
